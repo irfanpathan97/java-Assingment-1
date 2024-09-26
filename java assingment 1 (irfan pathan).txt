@@ -1,0 +1,286 @@
+Assignment 1: Validating Age and Income
+Write a program that checks if a person is eligible for a loan based on their age and income.
+Requirements:
+•    A person is eligible if their age is between 18 and 60 and their income is above $25,000.
+•    Use logical && to combine these conditions.
+
+
+
+import java.util.Scanner;
+
+public class LoanEligibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.print("Enter your annual income: ");
+        double income = scanner.nextDouble();
+
+        
+        if (age >= 18 && age <= 60 && income > 25000) {
+            System.out.println("You are eligible for the loan.");
+        } else {
+            System.out.println("You are not eligible for the loan.");
+        }
+
+        
+        scanner.close();
+    }
+}
+
+
+
+
+
+Assignment 2: Exam Grading System
+Write a program that determines whether a student passes an exam based on three subjects. A student passes if the average score is at least 60, and none of the individual scores is below 40.
+Requirements:
+•    Use logical operators && and || to combine conditions.
+
+import java.util.Scanner;
+
+public class ExamGradingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter the score for Subject 1: ");
+        double score1 = scanner.nextDouble();
+
+        System.out.print("Enter the score for Subject 2: ");
+        double score2 = scanner.nextDouble();
+
+        System.out.print("Enter the score for Subject 3: ");
+        double score3 = scanner.nextDouble();
+
+        
+        double average = (score1 + score2 + score3) / 3;
+
+        
+        boolean isAveragePass = average >= 60;
+        boolean isIndividualPass = score1 >= 40 && score2 >= 40 && score3 >= 40;
+
+        
+        if (isAveragePass && isIndividualPass) {
+            System.out.println("The student passes the exam.");
+        } else {
+            System.out.println("The student does not pass the exam.");
+        }
+
+        
+        scanner.close();
+    }
+}
+
+
+
+
+Assignment 3: Door Access Control
+Write a program that simulates an access control system. A person is allowed access if they have both a valid ID and a valid access card, or if they are an admin.
+Requirements:
+•    Use logical operators &&, ||, and !.
+
+import java.util.Scanner;
+
+public class DoorAccessControl {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Do you have a valid ID? (true/false): ");
+        boolean hasValidID = scanner.nextBoolean();
+
+        System.out.print("Do you have a valid access card? (true/false): ");
+        boolean hasAccessCard = scanner.nextBoolean();
+
+        System.out.print("Are you an admin? (true/false): ");
+        boolean isAdmin = scanner.nextBoolean();
+
+       
+        boolean hasAccess = (hasValidID && hasAccessCard) || isAdmin;
+
+       
+        if (hasAccess) {
+            System.out.println("Access granted.");
+        } else {
+            System.out.println("Access denied.");
+        }
+
+        
+        scanner.close();
+    }
+}
+
+
+Assignment 4: Voting Eligibility
+Write a program that checks if a person is eligible to vote. A person can vote if they are a citizen and their age is 18 or above.
+Requirements:
+•    Use logical && to combine conditions, and ! to negate conditions if necessary.
+
+
+import java.util.Scanner;
+
+public class VotingEligibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Are you a citizen? (true/false): ");
+        boolean isCitizen = scanner.nextBoolean();
+
+       
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+       
+        if (isCitizen && age >= 18) {
+            System.out.println("You are eligible to vote.");
+        } else {
+            System.out.println("You are not eligible to vote.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+Assignment 5: Job Application
+Write a program that checks if a person is eligible for a job based on their qualifications. A person is eligible if they have a bachelor’s degree or equivalent experience, and they have a clean criminal record.
+Requirements:
+•    Use logical operators to combine conditions.
+
+
+import java.util.Scanner;
+
+public class JobApplicationEligibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Do you have a bachelor's degree or equivalent experience? (true/false): ");
+        boolean hasDegreeOrExperience = scanner.nextBoolean();
+
+       
+        System.out.print("Do you have a clean criminal record? (true/false): ");
+        boolean hasCleanRecord = scanner.nextBoolean();
+
+       
+        if (hasDegreeOrExperience && hasCleanRecord) {
+            System.out.println("You are eligible for the job.");
+        } else {
+            System.out.println("You are not eligible for the job.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+
+Assignment 6: Logical NOT (!) for Negation
+Write a program that determines whether a number is not between 10 and 20 (inclusive).
+Requirements:
+•    Use logical ! to negate conditions.
+
+
+import java.util.Scanner;
+
+public class NumberRangeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        
+        if (!(number >= 10 && number <= 20)) {
+            System.out.println("The number is NOT between 10 and 20 (inclusive).");
+        } else {
+            System.out.println("The number is between 10 and 20 (inclusive).");
+        }
+
+        scanner.close();
+    }
+}
+
+Assignment 7: Weather Conditions
+Write a program that determines whether it's safe to go outside based on temperature and weather conditions. The conditions to go outside are:
+•    Temperature should be between 20°C and 30°C.
+•    It should not be raining.
+Requirements:
+•    Use logical operators && and !.
+
+
+
+import java.util.Scanner;
+
+public class WeatherConditions {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter the temperature in °C: ");
+        int temperature = scanner.nextInt();
+
+       
+        System.out.print("Is it raining? (true/false): ");
+        boolean isRaining = scanner.nextBoolean();
+
+        
+        if (temperature >= 20 && temperature <= 30 && !isRaining) {
+            System.out.println("It's safe to go outside.");
+        } else {
+            System.out.println("It's not safe to go outside.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+Assignment 8: Determine the Greatest Number Using Ternary Operator
+
+Write a Java program to find the greatest number among three numbers using the ternary operator.
+
+*Input: Three integer numbers from the user.
+*Output: The greatest number among the three entered numbers.
+
+
+import java.util.Scanner;
+
+public class GreatestNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter the third number: ");
+        int num3 = scanner.nextInt();
+
+       
+        int greatest = (num1 >= num2) 
+                        ? (num1 >= num3 ? num1 : num3) 
+                        : (num2 >= num3 ? num2 : num3);
+
+      
+        System.out.println("The greatest number among the three is: " + greatest);
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+
